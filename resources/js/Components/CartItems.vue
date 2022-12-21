@@ -15,7 +15,7 @@
                 <div class="flex flex-1 flex-col justify-between">
                     <Link :href="route('shop.show', item.options.slug)" class="flex flex-col">
                         <span>{{ item.name }}</span>
-                        <span>{{ item.options.details }}</span>
+                        <!-- <span>{{ item.options.details }}</span> -->
                     </Link>
                     <div class="flex flex-col mt-4">
                         <form @submit.prevent="remove(item.rowId)">
@@ -40,7 +40,7 @@
                     </select>
                 </div>
                 <span class="flex-1 text-right">
-                    {{ $filters.formatCurrency(item.price) }} ea.
+                    {{ item.price }} Kyats
                 </span>
             </div>
         </div>

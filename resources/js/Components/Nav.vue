@@ -6,8 +6,8 @@
                 <div class="flex">
                     <!-- Logo -->
                     <div class="flex-shrink-0 flex items-center">
-                        <Link :href="route('welcome')" class="font-logo block w-auto hover:text-yellow-500 transition">
-                            Coder's Shop
+                        <Link :href="route('welcome')" class="font-logo w-auto hover:text-yellow-500 transition flex flex-row">
+                            <img :src="'/storage/images/site_images/logo.jpg'" alt="Logo" width="50" height="50" class="m-0 rounded-sm"/> &nbsp;&nbsp; <span class="mt-3 text-2xl">G&G Fashion House</span>
                         </Link>
                     </div>
                 </div>
@@ -16,9 +16,11 @@
                     <!-- Settings Dropdown -->
                     <div class="ml-3 relative">
                         <div class="flex items-center space-x-3 relative">
-                            <Link :href="route('dashboard')" class="hover:text-yellow-500 transition" v-if="$page.props.user">
+                            <!-- <Link :href="route('dashboard')" class="hover:text-yellow-500 transition" v-if="$page.props.user">
                                 Dashboard
-                            </Link>
+                            </Link> -->
+                            <template v-if="$page.props.user">
+                            </template>
                             <template v-else>
                                 <Link :href="route('register')" class="hover:text-yellow-500 transition">
                                     Register
@@ -60,11 +62,11 @@
         <!-- Responsive Navigation Menu -->
         <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
             <template v-if="$page.props.user">
-                <div class="pt-2 pb-3 space-y-1">
+                <!-- <div class="pt-2 pb-3 space-y-1">
                     <jet-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                         Dashboard
                     </jet-responsive-nav-link>
-                </div>
+                </div> -->
             </template>
             <template v-else>
                 <div class="pt-2 pb-3 space-y-1">

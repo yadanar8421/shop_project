@@ -7,9 +7,9 @@
                 <icon name="angle-right" class="w-4 h-4 fill-current"></icon>
                 <span>{{ product.name }}</span>
             </template>
-            <template #search>
+            <!-- <template #search>
                 search
-            </template>
+            </template> -->
         </secondary-header>
         <div class="max-w-7xl mx-auto px-4 py-4 sm:flex sm:space-x-4 sm:px-6 lg:px-8">
             <div class="flex-1 sm:border-r">
@@ -46,19 +46,19 @@
                                 Price:
                             </span>
                             <span>
-                                {{ $filters.formatCurrency(product.price) }}
+                                {{ product.price }} Kyats
                             </span>
                         </div>
                     </div>
 
-                    <div class="flex space-x-4 mt-4">
+                    <!-- <div class="flex space-x-4 mt-4">
                         <p class="text-xl capitalize">
                             {{ product.details }}
                         </p>
-                    </div>
+                    </div> -->
                     <div class="flex space-x-4 mt-4">
                         <span class="text-xl capitalize">
-                            Sku:
+                            Product Id:
                         </span>
                         <p class="text-xl capitalize">
                             {{ product.product_code }}
@@ -101,7 +101,7 @@
                         </gray-button>
                     </div>
                 </form>
-                <div class="flex flex-col divide-y">
+                <!-- <div class="flex flex-col divide-y">
                     <div>
                         <button type="button" class="flex justify-between items-center bg-gray-300 rounded-t px-4 py-4 w-full transition hover:text-white hover:bg-gray-700 sm:px-6 lg:px-8">
                             <span>Product Description</span>
@@ -122,7 +122,7 @@
                             <span>Reviews</span>
                         </button>
                     </div>
-                </div>
+                </div> -->
                 <div class="text-center">
                     <p>Suggested based on your search</p>
                 </div>

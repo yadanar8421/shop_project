@@ -2,7 +2,8 @@
     <footer class="text-center text-white bg-gray-700 px-4 py-4">
         <div>
             <p>
-                {{ randomQuote }}
+                <!-- {{ randomQuote }} -->
+                Copyright All Right Reserved.
             </p>
         </div>
     </footer>

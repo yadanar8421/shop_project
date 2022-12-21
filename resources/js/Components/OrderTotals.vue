@@ -5,7 +5,7 @@
                 <span class="text-white">
                     Order Total(before tax & discount(s))
                 </span>
-                <span class="text-yellow-500">{{ $filters.formatCurrency(subtotal) }}</span>
+                <span class="text-yellow-500">{{ subtotal }} Kyats</span>
             </div>
             <div>
                 <yellow-button href="#" as="href" class="text-sm">Secure Checkout</yellow-button>
@@ -16,31 +16,31 @@
                 <span class="px-4">Order Summary</span>
                 <div class="flex justify-between bg-white px-4 py-2 mt-4">
                     <span>Item(s) subtotal({{ $page.props.cartCount }})</span>
-                    <span>{{ $filters.formatCurrency(newSubtotal) }}</span>
+                    <span>{{ newSubtotal }} Kyats</span>
                 </div>
                 <div class="flex justify-between px-4 mt-4">
                     <span>Shipping</span>
                     <span>Free</span>
                 </div>
-                <div class="flex justify-between px-4 mt-4" v-if="code">
+                <!-- <div class="flex justify-between px-4 mt-4" v-if="code">
                     <span>Discount Code ({{ code }})</span>
                     <form @submit.prevent="deleteCoupon">
                         <span>-{{ $filters.formatCurrency(discount) }}</span>
                         <button type="submit" class="text-red-600 ml-2">X</button>
                     </form>
-                </div>
+                </div> -->
                 <div class="flex justify-between px-4 mt-4">
                     <span>Estimated Tax</span>
-                    <span>{{ $filters.formatCurrency(tax) }}</span>
+                    <span>{{ tax }} Kyats</span>
                 </div>
                 <div class="bg-white px-4 py-2 mt-4">
                     <div class="flex justify-between">
                         <span>Order Total</span>
-                        <span>{{ $filters.formatCurrency(total) }}</span>
+                        <span>{{ total }} Kyats</span>
                     </div>
                     <div class="flex flex-col">
                         <span>({{ taxRate }}% tax rate)</span>
-                        <span>Lorem ipsum elit.</span>
+                        <!-- <span>Lorem ipsum elit.</span> -->
                     </div>
                 </div>
                 <div class="text-center mt-4">
@@ -52,7 +52,7 @@
             </div>
         </div>
     </div>
-    <div class="flex flex-col items-center bg-gray-300 shadow-md rounded mt-4 py-6" v-if="!code">
+    <!-- <div class="flex flex-col items-center bg-gray-300 shadow-md rounded mt-4 py-6" v-if="!code">
         <span class="text-2xl font-semibold">Promo</span>
         <form @submit.prevent="addCoupon" class="w-full">
             <div class="bg-gray-300 px-4">
@@ -71,7 +71,7 @@
                 </div>
             </div>
         </form>
-    </div>
+    </div> -->
 </template>
 
 <script>
@@ -86,37 +86,37 @@
             GrayButton,
             YellowButton,
         },
-        data() {
-            return {
-                form: this.$inertia.form({
-                    coupon_code: '',
-                })
-            }
-        },
+        // data() {
+        //     return {
+        //         form: this.$inertia.form({
+        //             coupon_code: '',
+        //         })
+        //     }
+        // },
         methods: {
-            addCoupon() {
-                this.form.post(this.route('coupon.store'), {
-                    preserveScroll: true,
-                    onSuccess: () => {
-                        this.form.reset()
-                        Toast.fire({
-                            icon: 'success',
-                            title: 'Coupon has been added!'
-                        })
-                    }
-                })
-            },
-            deleteCoupon() {
-                this.form.delete(this.route('coupon.destroy'), {
-                    preserveScroll: true,
-                    onSuccess: () => {
-                        Toast.fire({
-                            icon: 'success',
-                            title: 'Coupon has been removed!'
-                        })
-                    }
-                })
-            }
+            // addCoupon() {
+            //     this.form.post(this.route('coupon.store'), {
+            //         preserveScroll: true,
+            //         onSuccess: () => {
+            //             this.form.reset()
+            //             Toast.fire({
+            //                 icon: 'success',
+            //                 title: 'Coupon has been added!'
+            //             })
+            //         }
+            //     })
+            // },
+            // deleteCoupon() {
+            //     this.form.delete(this.route('coupon.destroy'), {
+            //         preserveScroll: true,
+            //         onSuccess: () => {
+            //             Toast.fire({
+            //                 icon: 'success',
+            //                 title: 'Coupon has been removed!'
+            //             })
+            //         }
+            //     })
+            // }
         }
     })
 </script>

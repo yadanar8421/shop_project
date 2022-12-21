@@ -4,6 +4,7 @@ use App\Http\Controllers\Cart\CartController;
 use App\Http\Controllers\Cart\LaterController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\Backend\OrganizationController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -48,3 +49,27 @@ Route::delete('/coupon', [CouponController::class, 'destroy'])->name('coupon.des
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+
+/**
+ * For Admin Route
+ */
+
+//  Route::middleware('guest')->group(function () {
+//     Route::get('login', [AuthController::class, 'login'])->name('login');
+// });
+
+// Route::middleware('auth')->group(function () {
+    // Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::prefix('admin')->group(function () {
+        Route::resource('/organization', OrganizationController::class);
+        // Route::get('/', [OrganizationController::class, 'index'])->name('organizations.index');
+        // Route::get('/create', [OrganizationController::class, 'create'])->name('organizations.create');
+        // Route::post('/', [OrganizationController::class, 'store'])->name('organizations.store');
+        // Route::get('/{organization}/edit', [OrganizationController::class, 'edit'])->name('organizations.edit');
+        // Route::put('/{organization}', [OrganizationController::class, 'update'])->name('organizations.update');
+        // Route::delete('/{organization}', [OrganizationController::class, 'destroy'])->name('organizations.destroy');
+    });
+// });
+

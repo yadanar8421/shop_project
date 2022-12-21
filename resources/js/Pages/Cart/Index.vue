@@ -30,7 +30,7 @@
                 <order-totals
                     :taxRate="cartTaxRate"
                     :subtotal="cartSubtotal"
-                    :tax="newTax"
+                    tax="0"
                     :total="newTotal"
                     :newSubtotal="newSubtotal"
                     :code="code"

@@ -8,7 +8,7 @@
             <header class="bg-gray-700 shadow">
                 <div class="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-8">
                     <h2 class="text-white text-center leading-tight">
-                        Lorem ipsum dolor sit amet.
+                        Welcome from G&G Fashion House
                     </h2>
                 </div>
             </header>

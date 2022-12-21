@@ -62,11 +62,11 @@ class ProductSeeder extends Seeder
             ])->categories()->attach($category);
         }
 
-        // HOME GOODS
+        // LADIES
         for ($i=1; $i <= 12; $i++) {
             $category = Category::find(4);
             Product::create([
-                'name' => 'Home Goods '.$i,
+                'name' => 'Ladies '.$i,
                 'slug' => 'homegoods-'.$i,
                 'details' => 'homegoods',
                 'description' =>'Lorem '. $i . ' ipsum dolor sit amet, consectetur adipisicing elit. Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',

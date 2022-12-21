@@ -6,7 +6,7 @@
                 <slot name="breadcrumbs"></slot>
             </div>
             <div class="w-1/2">
-                <slot name="search"></slot>
+                <!-- <slot name="search"></slot> -->
             </div>
         </div>
     </header>
